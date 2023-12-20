@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/widgets/categorylistview.dart';
+import 'package:news_app/widgets/newslistView.dart';
 
 
 class HomeView extends StatelessWidget
@@ -20,7 +21,13 @@ class HomeView extends StatelessWidget
         backgroundColor: Colors.transparent,
         elevation:0,  
       ),
-      body:CategoryListView()
-    );
+      body:
+        Padding(padding: EdgeInsets.symmetric(horizontal: 12),
+        child:Column(children: [
+          CategoryListView(),
+          SizedBox(height:34),
+          Expanded(child: NewsListView(),)
+        ],)     
+  ));
   }
 }
